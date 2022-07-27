@@ -1,16 +1,6 @@
 @font-face {
   font-family: "Avenir";
-  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
-}
-@font-face {
-  font-family: "Avenir";
-  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
-  font-weight: 600;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-  font-weight: bold;
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
 }
 * {
   margin: 0;
@@ -27,13 +17,95 @@ body {
   background-color: #323232;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .header__logo {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 1rem 0 0.5rem;
+}
+.header__logoimg {
+  width: 50%;
+  max-width: 7.5rem;
+  max-height: 1.25rem;
 }
 .header__navlist {
-  color: white;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-around;
+}
+.header__listitem {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 0 1rem;
+}
+
+.hero {
+  height: 50vw;
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.hero__overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+.hero__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+
+.about {
+  padding: 0.5rem 0;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.about__heading {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 1rem;
+}
+.about__article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.about__image {
+  height: 50vw;
+}
+.about__quote {
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.about__quoter {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.about__subheading {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.about__paragraphs {
+  display: flex;
+  flex-direction: column;
+}
+.about__paragraph {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
 }/*# sourceMappingURL=bio.css.map */

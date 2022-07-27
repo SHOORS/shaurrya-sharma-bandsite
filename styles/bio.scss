@@ -1,18 +1,61 @@
 @font-face {
     font-family: "Avenir";
-    src:url(../assets/fonts/AvenirNextLTPro-Regular.otf);    
+    src:url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");   
 }
 
-@font-face {
-    font-family: "Avenir";
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+// @font-face {
+//     font-family: "Avenir";
+//     src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+//     font-weight: 600;
+// }
+
+// @font-face {
+//     font-family: "Avenir";
+//     src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+//     font-weight: bold;
+// }
+
+$primary-color1: #323232;
+$primary-color2: #AFAFAF;
+$primary-color3: #FFFFFF;
+$secondary-color1: #000000;
+$secondary-color2: #E1E1E1;
+$secondary-color3: #FAFAFA;
+
+@mixin phone-page-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;  
+}
+
+@mixin phone-section-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;    
+}
+
+@mixin phone-sub-heading {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 600;
 }
 
-@font-face {
-    font-family: "Avenir";
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-    font-weight: bold;
+@mixin phone-body-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+
+@mixin phone-footer-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+
+@mixin phone-labels-and-buttons {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
 }
 
 * {
@@ -28,17 +71,87 @@ body {
 }
 
 .header {
-    background-color: #323232;
+    background-color: $primary-color1;
     display: flex;
     flex-direction: column;
+    width: 100%;
     &__logo {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 0.5rem;        
+    }            
+    &__logoimg {      
+        width: 50%;  
+        max-width: 7.5rem;
+        max-height: 1.25rem;        
+    }
+    &__navlist {        
+        color: $primary-color3;
         display: flex;
         justify-content: space-around;
     }
-    &__navlist {
-        color: white;
+    &__listitem {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0 1rem;
     }
 }
 
+.hero {
+    height: 50vw;
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-position: center;    
+    &__overlay{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba(50,50,50,0.5)
+    }    
+    &__title {
+        @include phone-page-heading;
+        color: $primary-color3;
+        padding: 1rem;
+    }    
+}
+
+.about {
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    &__heading {
+        @include phone-section-heading;
+        margin: 1rem 0 1rem;
+    }
+    &__article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__image {
+        height: 50vw;
+    }
+    &__quote {
+        margin: 1rem 0;
+        @include phone-sub-heading;
+    }
+    &__quoter {
+        @include phone-sub-heading;
+    }
+    &__subheading {
+        margin: 1.5rem 0 0.5rem;
+        @include phone-sub-heading;
+    }
+    &__paragraphs {
+        display: flex;
+        flex-direction: column;
+    }
+    &__paragraph {
+        @include phone-body-copy;
+        margin: 0.5rem 0;
+    }
+
+}
