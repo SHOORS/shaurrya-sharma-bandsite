@@ -153,5 +153,73 @@ body {
         @include phone-body-copy;
         margin: 0.5rem 0;
     }
+}
 
+.gallery {
+    background-color: $secondary-color3;
+    padding:1.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    &__title {
+        @include phone-section-heading;
+    }
+    &__photos {
+        display: flex;
+        flex-direction: column;
+    }
+    &__photo {
+        margin: 0.5rem 0;
+    }
+}
+
+.footer {
+    background-color: $primary-color1;
+    padding: 1.5rem 1rem 1rem;
+    &__touch {
+        display: flex;
+        &--left {
+            display: flex;
+            flex-direction: column;
+        }
+        &--right {
+            display: none;
+        }        
+    }
+    &__title {
+        @include phone-section-heading;
+        color: $primary-color3;
+    }
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+    &__sections {
+        display: flex;
+        flex-direction: column;
+    }
+    &__section {
+        display: flex;
+        flex-direction: column;
+    }
+    &__subheading {
+        @include phone-sub-heading;
+        color: $primary-color3;
+        margin: 0.5rem 0;
+    }
+    &__copy {
+        @include phone-footer-copy;
+        color: $primary-color3;
+        margin: 0.5rem 0;
+    }
+    &__bottom {
+        padding-top: 2rem;
+    }
+    &__bottomlogo {
+        margin: 1rem 0;
+    }
+    &__copyright {
+        @include phone-footer-copy;
+        color: $primary-color3;
+    }
 }
