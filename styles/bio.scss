@@ -1,16 +1,32 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+
 @font-face {
     font-family: "Avenir";
     src:url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");   
 }
 
-// @font-face {
-//     font-family: "Avenir";
-//     src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
-//     font-weight: 600;
-// }
+@font-face {
+    font-family: "AvenirDemi";
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+    // font-weight: 600;
+}
 
 // @font-face {
-//     font-family: "Avenir";
+//     font-family: "AvenirBold";
 //     src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
 //     font-weight: bold;
 // }
@@ -25,37 +41,68 @@ $secondary-color3: #FAFAFA;
 @mixin phone-page-heading {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;  
+    font-weight: 700;
+    font-family: "AvenirDemi";
+    letter-spacing: 0.0625rem;
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;        
+    }
 }
 
 @mixin phone-section-heading {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;    
+    // font-weight: 700;
+    font-family: "AvenirDemi"; 
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }   
 }
 
 @mixin phone-sub-heading {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 600;
+    letter-spacing: 0.03125rem;
+    // font-family: "AvenirDemi";
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
 }
 
 @mixin phone-body-copy {
     font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: 400;
+    letter-spacing: 0.015625rem;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
 }
 
 @mixin phone-footer-copy {
     font-size: 0.8125rem;
     line-height: 1.125rem;
     font-weight: 400;
+    letter-spacing: 0.015625rem;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
 }
 
 @mixin phone-labels-and-buttons {
     font-size: 0.625rem;
     line-height: 1.25rem;
     font-weight: 700;
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
 }
 
 * {
@@ -75,15 +122,26 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    @include tablet{
+        flex-direction: row;
+        align-items: center;        
+    }
     &__logo {
         display: flex;
         justify-content: center;
-        padding: 1rem 0 0.5rem;        
+        padding: 1rem 0 0.5rem; 
+        @include tablet {
+            padding: 1.5rem 2.25rem;
+        }       
     }            
     &__logoimg {      
         width: 50%;  
         max-width: 7.5rem;
-        max-height: 1.25rem;        
+        max-height: 1.25rem;
+        @include tablet {
+            width: 7.5rem;
+            height: 1.25rem;
+        }        
     }
     &__navlist {        
         color: $primary-color3;
@@ -91,15 +149,21 @@ body {
         justify-content: space-around;
     }
     &__listitem {
+        @include phone-body-copy;
+        font-weight: 400;
         display: flex;
         justify-content: center;
         width: 100%;
         padding: 0.5rem 0 1rem;
+        @include tablet {
+            padding: 1.5rem 0;
+            margin: 0 1.5rem;
+        }    
     }
 }
 
 .hero {
-    height: 50vw;
+    height: 55vw;
     background-image: url(../assets/images/hero-bio.jpg);
     background-size: cover;
     background-position: center;    
@@ -114,14 +178,21 @@ body {
         @include phone-page-heading;
         color: $primary-color3;
         padding: 1rem;
+        @include tablet {
+            padding: 2.25rem;
+        }
     }    
 }
 
 .about {
+    color: $primary-color1;
     padding: 0.5rem 0;
     margin: 0 1rem;
     display: flex;
     flex-direction: column;
+    @include tablet {
+        margin: 0 2.25rem;
+    }
     &__heading {
         @include phone-section-heading;
         margin: 1rem 0 1rem;
@@ -129,7 +200,7 @@ body {
     &__article {
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: column;        
     }
     &__image {
         height: 50vw;
@@ -140,14 +211,21 @@ body {
     }
     &__quoter {
         @include phone-sub-heading;
+        @include tablet {
+            font-size: 1rem;
+        }
     }
     &__subheading {
         margin: 1.5rem 0 0.5rem;
         @include phone-sub-heading;
+        color: $secondary-color1;
     }
     &__paragraphs {
         display: flex;
         flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
     }
     &__paragraph {
         @include phone-body-copy;
@@ -162,6 +240,7 @@ body {
     flex-direction: column;
     &__title {
         @include phone-section-heading;
+        color: $primary-color1;
     }
     &__photos {
         display: flex;
@@ -177,12 +256,19 @@ body {
     padding: 1.5rem 1rem 1rem;
     &__touch {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         &--left {
             display: flex;
             flex-direction: column;
         }
         &--right {
+            max-width: 7.5rem;
+            max-height: 1.25rem;
             display: none;
+            @include tablet {
+                display: flex;
+            }
         }        
     }
     &__title {
@@ -205,7 +291,7 @@ body {
     &__subheading {
         @include phone-sub-heading;
         color: $primary-color3;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
     }
     &__copy {
         @include phone-footer-copy;
@@ -217,9 +303,13 @@ body {
     }
     &__bottomlogo {
         margin: 1rem 0;
+        @include tablet {
+            display: none;
+        }
     }
     &__copyright {
         @include phone-footer-copy;
         color: $primary-color3;
+        font-size: 0.75rem;
     }
 }
