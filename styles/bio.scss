@@ -232,13 +232,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
         &--left {
             display: flex;
             flex-direction: column;
             @include tablet {
                 flex-direction: row;
                 align-items: center;
-                padding-bottom: 1.5rem;
+                // padding-bottom: 1.5rem;
             }
         }
         &--right {

@@ -389,6 +389,11 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .footer__touch {
+    padding-bottom: 1.5rem;
+  }
+}
 .footer__touch--left {
   display: flex;
   flex-direction: column;
@@ -397,7 +402,6 @@ a {
   .footer__touch--left {
     flex-direction: row;
     align-items: center;
-    padding-bottom: 1.5rem;
   }
 }
 .footer__touch--right {
