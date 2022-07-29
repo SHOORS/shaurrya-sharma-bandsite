@@ -43,6 +43,11 @@ body {
     padding: 1.5rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .header__logo {
+    padding-left: 10%;
+  }
+}
 .header__logoimg {
   width: 50%;
   max-width: 7.5rem;
@@ -89,6 +94,11 @@ body {
   background-size: cover;
   background-position: center;
 }
+@media (min-width: 1280px) {
+  .hero {
+    height: 50vw;
+  }
+}
 .hero__overlay {
   height: 100%;
   width: 100%;
@@ -116,6 +126,11 @@ body {
     padding: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__title {
+    padding-left: 10%;
+  }
+}
 
 .about {
   color: #323232;
@@ -128,6 +143,11 @@ body {
   .about {
     margin: 0 2.25rem;
     padding: 3rem 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about {
+    margin: 0 10%;
   }
 }
 .about__heading {
@@ -156,12 +176,22 @@ body {
     margin: 0 3.75rem;
   }
 }
+@media (min-width: 1280px) {
+  .about__article {
+    margin: 0 5.5rem;
+  }
+}
 .about__image {
   height: 55vw;
 }
 @media (min-width: 768px) {
   .about__image {
     height: 40vw;
+  }
+}
+@media (min-width: 1280px) {
+  .about__image {
+    height: 35vw;
   }
 }
 .about__quote {
@@ -181,6 +211,11 @@ body {
 @media (min-width: 768px) {
   .about__quote {
     margin: 2.25rem 0 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about__quote {
+    width: 90%;
   }
 }
 .about__quoter {
@@ -248,7 +283,6 @@ body {
     margin: 0 1rem 0 0;
   }
 }
-
 .gallery {
   background-color: #FAFAFA;
   padding: 1.5rem 1rem 0.5rem;
@@ -258,6 +292,11 @@ body {
 @media (min-width: 768px) {
   .gallery {
     padding: 3rem 1.5rem 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery {
+    padding: 3rem 10% 1.5rem;
   }
 }
 .gallery__title {
@@ -286,6 +325,12 @@ body {
   .gallery__photos {
     flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__photos {
+    width: 100%;
   }
 }
 .gallery__photo {
@@ -298,6 +343,11 @@ body {
     margin: 0;
   }
 }
+@media (min-width: 1280px) {
+  .gallery__photo {
+    height: 13vw;
+  }
+}
 
 .footer {
   background-color: #323232;
@@ -306,6 +356,11 @@ body {
 @media (min-width: 768px) {
   .footer {
     padding: 3rem 2.25rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding: 3rem 10% 2.25rem;
   }
 }
 .footer__touch {

@@ -132,6 +132,9 @@ body {
         padding: 1rem 0 0.5rem; 
         @include tablet {
             padding: 1.5rem 2.25rem;
+        } 
+        @include desktop{
+            padding-left: 10%;           
         }       
     }            
     &__logoimg {      
@@ -141,7 +144,8 @@ body {
         @include tablet {
             width: 7.5rem;
             height: 1.25rem;
-        }        
+        }
+             
     }
     &__navlist {        
         color: $primary-color3;
@@ -166,7 +170,10 @@ body {
     height: 55vw;
     background-image: url(../assets/images/hero-bio.jpg);
     background-size: cover;
-    background-position: center;    
+    background-position: center;
+    @include desktop {
+        height: 50vw;
+    }    
     &__overlay{
         height: 100%;
         width: 100%;
@@ -181,6 +188,9 @@ body {
         @include tablet {
             padding: 2.25rem;
         }
+        @include desktop{
+            padding-left: 10%;           
+        }   
     }    
 }
 
@@ -193,6 +203,9 @@ body {
     @include tablet {
         margin: 0 2.25rem;
         padding: 3rem 0;
+    }
+    @include desktop{
+        margin: 0 10%;           
     }
     &__heading {
         @include phone-section-heading;
@@ -207,12 +220,18 @@ body {
         flex-direction: column;
         @include tablet {
             margin: 0 3.75rem;            
-        }        
+        } 
+        @include desktop {
+            margin: 0 5.5rem;
+        }       
     }
     &__image {
         height: 55vw;
         @include tablet {
             height: 40vw;
+        }
+        @include desktop {
+            height: 35vw;
         }
     }
     &__quote {
@@ -221,6 +240,9 @@ body {
         font-family: "AvenirDemi";
         @include tablet {
             margin: 2.25rem 0 1rem;
+        }
+        @include desktop {
+            width: 90%;
         }
     }
     &__quoter {
@@ -252,6 +274,9 @@ body {
         @include tablet {
             margin: 0 1rem 0 0;
         }
+        @include desktop {
+
+        }
     }
 }
 
@@ -262,6 +287,9 @@ body {
     flex-direction: column;
     @include tablet {
         padding: 3rem 1.5rem 1.5rem;
+    }
+    @include desktop{
+        padding: 3rem 10% 1.5rem;            
     }
     &__title {
         @include phone-section-heading;
@@ -277,7 +305,11 @@ body {
         @include tablet {
             flex-flow: row wrap;
             justify-content: space-evenly;
+            align-items: center;
         }
+        @include desktop {
+            width: 100%;
+        }        
     }
     &__photo {
         margin: 0.5rem 0;
@@ -287,6 +319,10 @@ body {
             padding: 0.75rem;
             margin: 0;            
         }
+        @include desktop{
+            // height: 10.9rem; 
+            height: 13vw;          
+        }
     }
 }
 
@@ -295,6 +331,9 @@ body {
     padding: 1.5rem 1rem 1rem;
     @include tablet {
         padding: 3rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 10% 2.25rem;
     }
     &__touch {
         display: flex;
@@ -390,7 +429,6 @@ body {
         color: $primary-color3;
         font-size: 0.75rem;
         font-family: "Avenir";
-        font-weight: 400;
-        
+        font-weight: 400;        
     }
 }
