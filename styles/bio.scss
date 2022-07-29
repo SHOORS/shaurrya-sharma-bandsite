@@ -25,11 +25,11 @@ $breakpoint-desktop: 1280px;
     // font-weight: 600;
 }
 
-// @font-face {
-//     font-family: "AvenirBold";
-//     src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
-//     font-weight: bold;
-// }
+@font-face {
+    font-family: "AvenirBold";
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+    // font-weight: bold;
+}
 
 $primary-color1: #323232;
 $primary-color2: #AFAFAF;
@@ -187,30 +187,45 @@ body {
 .about {
     color: $primary-color1;
     padding: 0.5rem 0;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     display: flex;
     flex-direction: column;
     @include tablet {
         margin: 0 2.25rem;
+        padding: 3rem 0;
     }
     &__heading {
         @include phone-section-heading;
         margin: 1rem 0 1rem;
+        @include tablet{
+            margin: 0 0 1.5rem;          
+        }
     }
     &__article {
-        width: 100%;
+        // width: 100%;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column;
+        @include tablet {
+            margin: 0 3.75rem;            
+        }        
     }
     &__image {
-        height: 50vw;
+        height: 55vw;
+        @include tablet {
+            height: 40vw;
+        }
     }
     &__quote {
         margin: 1rem 0;
         @include phone-sub-heading;
+        font-family: "AvenirDemi";
+        @include tablet {
+            margin: 2.25rem 0 1rem;
+        }
     }
     &__quoter {
         @include phone-sub-heading;
+        font-family: "AvenirDemi";
         @include tablet {
             font-size: 1rem;
         }
@@ -219,6 +234,10 @@ body {
         margin: 1.5rem 0 0.5rem;
         @include phone-sub-heading;
         color: $secondary-color1;
+        @include tablet{
+            margin: 3rem 0 1rem;
+            font-family: "AvenirDemi";
+        }
     }
     &__paragraphs {
         display: flex;
@@ -230,6 +249,9 @@ body {
     &__paragraph {
         @include phone-body-copy;
         margin: 0.5rem 0;
+        @include tablet {
+            margin: 0 1rem 0 0;
+        }
     }
 }
 
@@ -238,22 +260,42 @@ body {
     padding:1.5rem 1rem 0.5rem;
     display: flex;
     flex-direction: column;
+    @include tablet {
+        padding: 3rem 1.5rem 1.5rem;
+    }
     &__title {
         @include phone-section-heading;
         color: $primary-color1;
+        @include tablet {
+            margin-left: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
     }
     &__photos {
         display: flex;
         flex-direction: column;
+        @include tablet {
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+        }
     }
     &__photo {
         margin: 0.5rem 0;
+        @include tablet {
+            height: 15.3666173418362932423519850999582558vw;
+            //there is a reason for this ^ please inquire why if curious.
+            padding: 0.75rem;
+            margin: 0;            
+        }
     }
 }
 
 .footer {
     background-color: $primary-color1;
     padding: 1.5rem 1rem 1rem;
+    @include tablet {
+        padding: 3rem 2.25rem 2.25rem;
+    }
     &__touch {
         display: flex;
         justify-content: space-between;
@@ -261,6 +303,11 @@ body {
         &--left {
             display: flex;
             flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+                align-items: center;
+                padding-bottom: 1.5rem;
+            }
         }
         &--right {
             max-width: 7.5rem;
@@ -276,27 +323,58 @@ body {
         color: $primary-color3;
     }
     &__icons {
+        height: 2.25rem;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         margin: 1rem 0;
+        @include tablet {
+            width: 7.25rem;
+            margin: 0 1.75rem;
+        }
+    }
+    &__icon {
+        height: 1.5rem;
+        @include tablet {
+            height: 2.25rem;
+        }
     }
     &__sections {
         display: flex;
         flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
     }
     &__section {
         display: flex;
         flex-direction: column;
+        &--middle {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                padding: 0 2.25rem;
+            }
+        }
     }
     &__subheading {
         @include phone-sub-heading;
         color: $primary-color3;
         margin: 1rem 0;
+        @include tablet {
+            @include phone-footer-copy;
+            padding: 0.75rem 0;
+            margin: 0;
+        }
     }
     &__copy {
         @include phone-footer-copy;
         color: $primary-color3;
         margin: 0.5rem 0;
+        font-weight: 400;
+        @include tablet {
+            margin: 0.75rem 0;
+        }
     }
     &__bottom {
         padding-top: 2rem;
@@ -311,5 +389,8 @@ body {
         @include phone-footer-copy;
         color: $primary-color3;
         font-size: 0.75rem;
+        font-family: "Avenir";
+        font-weight: 400;
+        
     }
 }
