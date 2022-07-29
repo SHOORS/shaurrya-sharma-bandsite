@@ -1,0 +1,109 @@
+@use './variables' as *;
+
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+
+@font-face {
+    font-family: "Avenir";
+    src:url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");   
+}
+
+@font-face {
+    font-family: "AvenirDemi";
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "AvenirBold";
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+}
+
+@mixin phone-page-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-family: "AvenirDemi";
+    letter-spacing: 0.0625rem;
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;        
+    }
+}
+
+@mixin phone-section-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;    
+    font-family: "AvenirDemi"; 
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }   
+}
+
+@mixin phone-sub-heading {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    letter-spacing: 0.03125rem;   
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+@mixin phone-body-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.015625rem;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+@mixin phone-footer-copy {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.015625rem;
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+}
+
+@mixin phone-labels-and-buttons {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Avenir";    
+}
+
+a {
+    color:inherit
+}

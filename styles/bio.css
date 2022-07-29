@@ -21,6 +21,10 @@ body {
   font-family: "Avenir";
 }
 
+a {
+  color: inherit;
+}
+
 .header {
   background-color: #323232;
   display: flex;
@@ -40,7 +44,7 @@ body {
 }
 @media (min-width: 768px) {
   .header__logo {
-    padding: 1.5rem 2.25rem;
+    padding: 1.5rem 2.25rem 1.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -50,8 +54,8 @@ body {
 }
 .header__logoimg {
   width: 50%;
-  max-width: 7.5rem;
-  max-height: 1.25rem;
+  min-width: 7.5rem;
+  min-height: 1.25rem;
 }
 @media (min-width: 768px) {
   .header__logoimg {
@@ -60,11 +64,11 @@ body {
   }
 }
 .header__navlist {
-  color: #FFFFFF;
+  color: #E1E1E1;
   display: flex;
   justify-content: space-around;
 }
-.header__listitem {
+.header__listitem, .header__listitem--active {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -76,13 +80,21 @@ body {
   padding: 0.5rem 0 1rem;
 }
 @media (min-width: 768px) {
-  .header__listitem {
+  .header__listitem, .header__listitem--active {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
+.header__listitem--active {
+  color: #FFFFFF;
+  border-bottom: solid 0.25rem;
+}
+.header__listitem:hover, .header__listitem--active:hover {
+  color: #FFFFFF;
+  border-bottom: solid 0.25rem;
+}
 @media (min-width: 768px) {
-  .header__listitem {
+  .header__listitem, .header__listitem--active {
     padding: 1.5rem 0;
     margin: 0 1.5rem;
   }
@@ -183,6 +195,10 @@ body {
 }
 .about__image {
   height: 55vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 @media (min-width: 768px) {
   .about__image {
@@ -283,6 +299,7 @@ body {
     margin: 0 1rem 0 0;
   }
 }
+
 .gallery {
   background-color: #FAFAFA;
   padding: 1.5rem 1rem 0.5rem;
@@ -335,6 +352,10 @@ body {
 }
 .gallery__photo {
   margin: 0.5rem 0;
+  filter: grayscale(100%);
+}
+.gallery__photo:hover {
+  filter: none;
 }
 @media (min-width: 768px) {
   .gallery__photo {

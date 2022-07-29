@@ -1,121 +1,5 @@
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1280px;
-
-@mixin tablet {
-    @media (min-width: $breakpoint-tablet) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media (min-width: $breakpoint-desktop) {
-        @content;
-    }
-}
-
-
-@font-face {
-    font-family: "Avenir";
-    src:url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");   
-}
-
-@font-face {
-    font-family: "AvenirDemi";
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
-    // font-weight: 600;
-}
-
-@font-face {
-    font-family: "AvenirBold";
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
-    // font-weight: bold;
-}
-
-$primary-color1: #323232;
-$primary-color2: #AFAFAF;
-$primary-color3: #FFFFFF;
-$secondary-color1: #000000;
-$secondary-color2: #E1E1E1;
-$secondary-color3: #FAFAFA;
-
-@mixin phone-page-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
-    font-family: "AvenirDemi";
-    letter-spacing: 0.0625rem;
-    @include tablet {
-        font-size: 3.75rem;
-        line-height: 4.25rem;        
-    }
-}
-
-@mixin phone-section-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    // font-weight: 700;
-    font-family: "AvenirDemi"; 
-    @include tablet {
-        font-size: 2.25rem;
-        line-height: 2.75rem;
-    }   
-}
-
-@mixin phone-sub-heading {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 600;
-    letter-spacing: 0.03125rem;
-    // font-family: "AvenirDemi";
-    @include tablet {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-}
-
-@mixin phone-body-copy {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    letter-spacing: 0.015625rem;
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-    }
-}
-
-@mixin phone-footer-copy {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    letter-spacing: 0.015625rem;
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-}
-
-@mixin phone-labels-and-buttons {
-    font-size: 0.625rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    @include tablet {
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-    }
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-body {
-    font-family: "Avenir";
-    // src: url(../assets/fonts/AvenirNextLTPro-Regular.otf)
-}
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
 
 .header {
     background-color: $primary-color1;
@@ -131,7 +15,7 @@ body {
         justify-content: center;
         padding: 1rem 0 0.5rem; 
         @include tablet {
-            padding: 1.5rem 2.25rem;
+            padding: 1.5rem 2.25rem 1.25rem;
         } 
         @include desktop{
             padding-left: 10%;           
@@ -139,16 +23,15 @@ body {
     }            
     &__logoimg {      
         width: 50%;  
-        max-width: 7.5rem;
-        max-height: 1.25rem;
+        min-width: 7.5rem;
+        min-height: 1.25rem;
         @include tablet {
             width: 7.5rem;
             height: 1.25rem;
-        }
-             
+        }             
     }
     &__navlist {        
-        color: $primary-color3;
+        color: $secondary-color2;
         display: flex;
         justify-content: space-around;
     }
@@ -159,6 +42,15 @@ body {
         justify-content: center;
         width: 100%;
         padding: 0.5rem 0 1rem;
+        &--active {
+            @extend .header__listitem;
+            color: $primary-color3;
+            border-bottom: solid 0.25rem;
+        }
+        &:hover {            
+            color: $primary-color3;
+            border-bottom: solid 0.25rem;
+        } 
         @include tablet {
             padding: 1.5rem 0;
             margin: 0 1.5rem;
@@ -174,7 +66,7 @@ body {
     @include desktop {
         height: 50vw;
     }    
-    &__overlay{
+    &__overlay {
         height: 100%;
         width: 100%;
         display: flex;
@@ -214,8 +106,7 @@ body {
             margin: 0 0 1.5rem;          
         }
     }
-    &__article {
-        // width: 100%;
+    &__article {        
         display: flex;
         flex-direction: column;
         @include tablet {
@@ -227,6 +118,8 @@ body {
     }
     &__image {
         height: 55vw;
+        object-fit: cover;
+        object-position: center;        
         @include tablet {
             height: 40vw;
         }
@@ -274,9 +167,6 @@ body {
         @include tablet {
             margin: 0 1rem 0 0;
         }
-        @include desktop {
-
-        }
     }
 }
 
@@ -313,14 +203,17 @@ body {
     }
     &__photo {
         margin: 0.5rem 0;
+        filter: grayscale(100%); 
+        &:hover {
+            filter: none;
+        }
         @include tablet {
             height: 15.3666173418362932423519850999582558vw;
-            //there is a reason for this ^ please inquire why if curious.
+            //there is a reason for this madness ^ please inquire why if curious.
             padding: 0.75rem;
-            margin: 0;            
+            margin: 0;                       
         }
-        @include desktop{
-            // height: 10.9rem; 
+        @include desktop{             
             height: 13vw;          
         }
     }
