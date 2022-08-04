@@ -11,30 +11,20 @@
         @include desktop {
             display: flex; 
             padding-left: 10%;
-            padding-right: 10%;
-            // // justify-content: space-between;           
-            // margin-left: 10%;
-            // margin-right: 10%;
-
+            padding-right: 10%;            
         }
     }
-    &__left {
-        
-        @include desktop {
-            
+    &__left {        
+        @include desktop {            
             width: 25%;
             align-items: center;
             justify-content: space-around;           
         }        
     }
-    &__right {
-        
-        @include desktop {
-            
-            width: 75%;
-            
-        }
-        
+    &__right {        
+        @include desktop {            
+            width: 75%;            
+        }        
     }
     &__title {
         @include phone-section-heading; 
@@ -51,13 +41,12 @@
     }
     &__tabletop {
         display: none;
-        @include tablet {
-            // background-color: rgb(255, 255, 255);
+        @include tablet {            
             display: flex;  
             padding: 0 1rem;                     
         }
-        @include desktop {
-            padding: 1rem 1rem;
+        @include desktop {            
+            padding: 1rem 0 1rem 1rem;            
         }
     }
     &__tabletop-item {
@@ -71,15 +60,20 @@
         }
     }
     &__oneShow {
-        padding: 1rem 1rem;
-        // background-color: rgb(255, 255, 255);
+        padding: 1rem 1rem;        
         border-bottom: 1px solid $secondary-color2;
         display: flex;
-        flex-direction: column;
+        flex-direction: column;        
+        &:hover {
+            background-color: $secondary-color3;
+        }             
         @include tablet {
             align-items: center;
             flex-direction: row;
             padding: 1.5rem 1rem;                       
+        }
+        @include desktop {
+            padding-right: 0;
         }
     }
     &__date {
@@ -150,8 +144,83 @@
         border-radius: 0.25rem;
         height: 2.5rem;
         width: 100%;
+        &:hover {
+            background-color: $secondary-color1;
+        }
         @include tablet {
             width: 25%
         }
     }
+}
+
+.hero {
+    height: 75vw;    
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-size: cover;
+    background-position: center;
+    @include tablet {
+        height: 65vw;
+    }
+    @include desktop {
+        height: 50vw;
+    }    
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;        
+        background-color: rgba(50,50,50,0.5);
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__left {
+        max-width: 70%;
+        @include tablet {
+            padding-left: 2.25rem;
+        }
+        @include desktop{
+            padding-left: 10%;
+            max-width: 50%;           
+        } 
+    }
+    &__right {
+        
+        padding: 1rem;
+        @include tablet {
+            padding: 2.25rem;
+            max-width: 50%;
+        }
+        @include desktop{
+            padding-right: 10%;           
+        } 
+    }
+    &__subheading {
+        @include phone-sub-heading;
+        color: $primary-color3;
+        font-weight: 400;
+        padding: 1rem 0 0 1rem;
+        @include tablet {
+            padding-left: 0;
+        }
+        @include desktop{
+            padding-left: 0;           
+        } 
+        
+    }    
+    &__title {
+        @include phone-page-heading;
+        color: $primary-color3;
+        padding: 1rem;
+        @include tablet {
+            padding-left: 0;
+        }
+        @include desktop{
+            padding-left: 0;           
+        } 
+        
+    }    
 }

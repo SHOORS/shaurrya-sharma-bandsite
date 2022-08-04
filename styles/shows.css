@@ -339,7 +339,7 @@ a {
 }
 @media (min-width: 1280px) {
   .shows__tabletop {
-    padding: 1rem 1rem;
+    padding: 1rem 0 1rem 1rem;
   }
 }
 .shows__tabletop-item {
@@ -369,11 +369,19 @@ a {
   display: flex;
   flex-direction: column;
 }
+.shows__oneShow:hover {
+  background-color: #FAFAFA;
+}
 @media (min-width: 768px) {
   .shows__oneShow {
     align-items: center;
     flex-direction: row;
     padding: 1.5rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__oneShow {
+    padding-right: 0;
   }
 }
 .shows__date {
@@ -484,8 +492,121 @@ a {
   height: 2.5rem;
   width: 100%;
 }
+.shows__button:hover {
+  background-color: #000000;
+}
 @media (min-width: 768px) {
   .shows__button {
     width: 25%;
+  }
+}
+
+.hero {
+  height: 75vw;
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 65vw;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 50vw;
+  }
+}
+.hero__overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+@media (min-width: 1280px) {
+  .hero__overlay {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.hero__left {
+  max-width: 70%;
+}
+@media (min-width: 768px) {
+  .hero__left {
+    padding-left: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__left {
+    padding-left: 10%;
+    max-width: 50%;
+  }
+}
+.hero__right {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__right {
+    padding: 2.25rem;
+    max-width: 50%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__right {
+    padding-right: 10%;
+  }
+}
+.hero__subheading {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  letter-spacing: 0.03125rem;
+  color: #FFFFFF;
+  font-weight: 400;
+  padding: 1rem 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .hero__subheading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__subheading {
+    padding-left: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__subheading {
+    padding-left: 0;
+  }
+}
+.hero__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  font-family: "AvenirDemi";
+  letter-spacing: 0.0625rem;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__title {
+    padding-left: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__title {
+    padding-left: 0;
   }
 }/*# sourceMappingURL=shows.css.map */
