@@ -369,6 +369,25 @@ a {
   display: flex;
   flex-direction: column;
 }
+.shows__oneShow--selected {
+  background-color: #E1E1E1;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .shows__oneShow--selected {
+    align-items: center;
+    flex-direction: row;
+    padding: 1.5rem 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__oneShow--selected {
+    padding-right: 0;
+  }
+}
 .shows__oneShow:hover {
   background-color: #FAFAFA;
 }
@@ -502,7 +521,6 @@ a {
 }
 
 .hero {
-  height: 75vw;
   background-image: url(../assets/images/hero-shows.jpg);
   background-size: cover;
   background-position: center;

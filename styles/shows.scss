@@ -28,8 +28,7 @@
     }
     &__title {
         @include phone-section-heading; 
-        padding-left: 1rem;
-        
+        padding-left: 1rem;        
         @include tablet {
             padding-left: 1rem;
             padding-right: 1rem; 
@@ -63,7 +62,23 @@
         padding: 1rem 1rem;        
         border-bottom: 1px solid $secondary-color2;
         display: flex;
-        flex-direction: column;        
+        flex-direction: column; 
+        &--selected {
+            background-color: $secondary-color2;            
+            padding: 1rem 1rem;        
+            border-bottom: 1px solid $secondary-color2;
+            display: flex;
+            flex-direction: column;             
+            
+            @include tablet {
+                align-items: center;
+                flex-direction: row;
+                padding: 1.5rem 1rem;                       
+            }
+            @include desktop {
+                padding-right: 0;
+            }            
+        }       
         &:hover {
             background-color: $secondary-color3;
         }             
@@ -154,7 +169,7 @@
 }
 
 .hero {
-    height: 75vw;    
+    // height: 75vw;    
     background-image: url(../assets/images/hero-shows.jpg);
     background-size: cover;
     background-position: center;
@@ -187,8 +202,7 @@
             max-width: 50%;           
         } 
     }
-    &__right {
-        
+    &__right {        
         padding: 1rem;
         @include tablet {
             padding: 2.25rem;
@@ -208,8 +222,7 @@
         }
         @include desktop{
             padding-left: 0;           
-        } 
-        
+        }         
     }    
     &__title {
         @include phone-page-heading;
@@ -220,7 +233,6 @@
         }
         @include desktop{
             padding-left: 0;           
-        } 
-        
+        }         
     }    
 }

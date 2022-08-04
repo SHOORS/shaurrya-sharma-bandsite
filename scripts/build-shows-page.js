@@ -99,4 +99,14 @@ for (let i = 0; i < shows.length; i++) {
     showButton.classList.add("shows__button");
     showButton.innerText = "BUY TICKETS";
     oneShow.appendChild(showButton);
+
+    oneShow.addEventListener("click", onClick);
+}
+
+function onClick(event) {
+    const currentSelected = document.querySelector(".shows__oneShow--selected");
+    if (currentSelected) {
+        currentSelected.classList.replace("shows__oneShow--selected", "shows__oneShow");
+    }
+    event.currentTarget.classList.replace("shows__oneShow", "shows__oneShow--selected");
 }
