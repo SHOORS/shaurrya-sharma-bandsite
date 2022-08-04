@@ -1,0 +1,168 @@
+@use './variables' as *;
+@use "./mixins" as *;
+
+.header {
+    background-color: $primary-color1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include tablet{
+        flex-direction: row;
+        align-items: center;        
+    }
+    &__logo {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 0.5rem; 
+        @include tablet {
+            padding: 1.5rem 2.25rem 1.25rem;
+        } 
+        @include desktop{
+            padding-left: 10%;           
+        }       
+    }            
+    &__logoimg {      
+        width: 50%;  
+        min-width: 7.5rem;
+        min-height: 1.25rem;
+        @include tablet {
+            width: 7.5rem;
+            height: 1.25rem;
+        }             
+    }
+    &__navlist {        
+        color: $secondary-color2;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__listitem {
+        @include phone-body-copy;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0 1rem;
+        &--active {
+            @extend .header__listitem;
+            color: $primary-color3;
+            border-bottom: solid 0.25rem;
+        }
+        &:hover {            
+            color: $primary-color3;
+            border-bottom: solid 0.25rem;
+        } 
+        @include tablet {
+            padding: 1.5rem 0;
+            margin: 0 1.5rem;
+        }    
+    }
+}
+
+.footer {
+    background-color: $primary-color1;
+    padding: 1.5rem 1rem 1rem;
+    @include tablet {
+        padding: 3rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 10% 2.25rem;
+    }
+    &__touch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
+        &--left {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+                align-items: center;                
+            }
+        }
+        &--right {
+            max-width: 7.5rem;
+            max-height: 1.25rem;
+            display: none;
+            @include tablet {
+                display: flex;
+            }
+        }        
+    }
+    &__title {
+        @include phone-section-heading;
+        color: $primary-color3;
+    }
+    &__icons {
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+        @include tablet {
+            width: 7.25rem;
+            margin: 0 1.75rem;
+        }
+    }
+    &__icon {
+        height: 1.5rem;
+        @include tablet {
+            height: 2.25rem;
+        }
+    }
+    &__sections {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+    &__section {
+        display: flex;
+        flex-direction: column;
+        &--middle {
+            display: flex;
+            flex-direction: column;
+            @include tablet {
+                padding: 0 2.25rem;
+            }
+        }
+    }
+    &__subheading {
+        @include phone-sub-heading;
+        color: $primary-color3;
+        margin: 1rem 0;
+        @include tablet {
+            @include phone-footer-copy;
+            padding: 0.75rem 0;
+            margin: 0;
+        }
+    }
+    &__copy {
+        @include phone-footer-copy;
+        color: $primary-color3;
+        margin: 0.5rem 0;
+        font-weight: 400;
+        @include tablet {
+            margin: 0.75rem 0;
+        }
+    }
+    &__bottom {
+        padding-top: 2rem;
+    }
+    &__bottomlogo {
+        margin: 1rem 0;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__copyright {
+        @include phone-footer-copy;
+        color: $primary-color3;
+        font-size: 0.75rem;
+        font-family: "Avenir";
+        font-weight: 400;        
+    }
+}

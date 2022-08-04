@@ -1,0 +1,157 @@
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+@use "partials/global" as *;
+
+.shows {    
+    &__showsList {
+        padding: 2.5rem 0 1rem;
+        @include tablet {
+            padding: 3rem 1.25rem 2.25rem;
+        }
+        @include desktop {
+            display: flex; 
+            padding-left: 10%;
+            padding-right: 10%;
+            // // justify-content: space-between;           
+            // margin-left: 10%;
+            // margin-right: 10%;
+
+        }
+    }
+    &__left {
+        
+        @include desktop {
+            
+            width: 25%;
+            align-items: center;
+            justify-content: space-around;           
+        }        
+    }
+    &__right {
+        
+        @include desktop {
+            
+            width: 75%;
+            
+        }
+        
+    }
+    &__title {
+        @include phone-section-heading; 
+        padding-left: 1rem;
+        
+        @include tablet {
+            padding-left: 1rem;
+            padding-right: 1rem; 
+            padding-bottom: 2.25rem;
+        } 
+        @include desktop {
+            padding: 0;
+        }
+    }
+    &__tabletop {
+        display: none;
+        @include tablet {
+            // background-color: rgb(255, 255, 255);
+            display: flex;  
+            padding: 0 1rem;                     
+        }
+        @include desktop {
+            padding: 1rem 1rem;
+        }
+    }
+    &__tabletop-item {
+        @include phone-body-copy;
+        display: none;
+        color:$primary-color2;
+        @include tablet {
+            font-size: 0.75rem;
+            display: inline;
+            width: 25%; 
+        }
+    }
+    &__oneShow {
+        padding: 1rem 1rem;
+        // background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid $secondary-color2;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            align-items: center;
+            flex-direction: row;
+            padding: 1.5rem 1rem;                       
+        }
+    }
+    &__date {
+        @include phone-body-copy;
+        font-family: "AvenirDemi";
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        @include tablet {
+            width: 25%;
+            padding: 0;            
+        }
+        &::before {
+            content: "DATE";
+            color:$primary-color2;
+            font-family: "Avenir";
+            font-size: 0.75rem;
+            padding-bottom: 0.5rem;
+            @include tablet {
+                display: none; 
+            }
+        }
+    }
+    &__venue {
+        @include phone-body-copy;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        @include tablet {
+            width: 25%;
+            padding: 0;
+        }
+        &::before {
+            content: "VENUE";
+            color:$primary-color2;
+            font-size: 0.75rem;
+            padding-bottom: 0.5rem;
+            @include tablet {
+                display: none;                
+            }
+        }
+    }
+    &__location {
+        @include phone-body-copy;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        @include tablet {
+            width: 25%;
+            padding: 0;
+        }
+        &::before {
+            content: "LOCATION";
+            color:$primary-color2;
+            font-size: 0.75rem;
+            padding-bottom: 0.5rem;
+            @include tablet {
+                display: none; 
+            }
+        }
+    }
+    &__button {
+        letter-spacing: 1px;        
+        font-weight: 600;
+        border: none;
+        color: $primary-color3;
+        background-color: $primary-color1;
+        border-radius: 0.25rem;
+        height: 2.5rem;
+        width: 100%;
+        @include tablet {
+            width: 25%
+        }
+    }
+}
