@@ -575,6 +575,11 @@ a {
     line-height: 2.75rem;
   }
 }
+@media (min-width: 768px) {
+  .comments__title {
+    padding-bottom: 2.25rem;
+  }
+}
 .comments__form {
   display: flex;
   flex-direction: column;
@@ -702,6 +707,7 @@ a {
   height: 2.5rem;
   border-radius: 0.25rem;
   font-size: 1rem;
+  border: none;
 }
 .comments__button:hover {
   background-color: #000000;
@@ -711,5 +717,87 @@ a {
     width: 9.375rem;
     padding: 0 2rem;
     align-self: flex-end;
+  }
+}
+.comments__posted {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .comments__posted {
+    margin: 0 5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__posted {
+    margin: 0 5.5rem;
+  }
+}
+.comments__postedComment {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px #E1E1E1;
+  padding: 1.25rem 0;
+}
+.comments__postedComment-image {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-right: 1rem;
+}
+.comments__postedComment-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.comments__postedComment-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0.25rem;
+}
+.comments__postedComment-name {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.015625rem;
+  font-family: "AvenirDemi";
+}
+@media (min-width: 768px) {
+  .comments__postedComment-name {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.comments__postedComment-date {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.015625rem;
+  color: #AFAFAF;
+}
+@media (min-width: 768px) {
+  .comments__postedComment-date {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.comments__postedComment-main {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.015625rem;
+}
+@media (min-width: 768px) {
+  .comments__postedComment-main {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }/*# sourceMappingURL=bio.css.map */

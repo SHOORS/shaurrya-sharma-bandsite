@@ -234,6 +234,9 @@
     &__title {
         @include phone-section-heading;
         padding-bottom: 1rem;
+        @include tablet {
+            padding-bottom: 2.25rem;
+        }
     }
     &__form {
         display: flex;
@@ -317,6 +320,7 @@
         height: 2.5rem;
         border-radius: 0.25rem;
         font-size: 1rem;
+        border: none;
         &:hover {
             background-color: $secondary-color1;
         }
@@ -326,7 +330,64 @@
             align-self: flex-end;
         }
     }
+    &__posted {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        // border-bottom: solid 1px $secondary-color2;
+        // padding-bottom: 1.25rem;
+        @include tablet {
+            margin: 0 5rem;
+            // padding-bottom: 2.25rem;
+            // width: 85%;            
+        } 
+        @include desktop {
+            margin: 0 5.5rem;
+        } 
+    }
+    &__postedComment {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        border-bottom: solid 1px $secondary-color2;
+        padding: 1.25rem 0;
+    }
+    &__postedComment-left {
+
+    }
+    &__postedComment-image {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        background-color: $secondary-color2;
+        object-fit: cover;
+        object-position: center;
+        margin-right: 1rem;        
+    }
+    &__postedComment-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__postedComment-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 0.25rem;
+    }
+    &__postedComment-name {
+        @include phone-body-copy;
+        font-family: "AvenirDemi";
+    }
+    &__postedComment-date {
+        @include phone-body-copy;
+        color: $primary-color2;        
+    }
+    &__postedComment-main {
+        @include phone-body-copy;
+    }
 }
+
 
 // .footer {
 //     background-color: $primary-color1;
