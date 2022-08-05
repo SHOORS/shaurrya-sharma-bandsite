@@ -13,17 +13,13 @@
             <a href="./index.html"><img class="header__logoimg"src="./assets/logos/Logo-bandsite.svg"/></a>
         </div>
         <nav class="header__nav">
-            <ul class="header__navlist">
-                
-                    <li class="header__listitem--active">
-                        <a href = "../index.html">Biography</a>
-                    </li>
-                   
-                
-                    <li class="header__listitem">
-                        <a href="./pages/shows.html">Shows</a>
-                    </li>
-                
+            <ul class="header__navlist">                
+                <li class="header__listitem--active">
+                    <a href = "../index.html">Biography</a>
+                </li>
+                <li class="header__listitem">
+                    <a href="./pages/shows.html">Shows</a>
+                </li>                
             </ul>
         </nav>
     </header>
@@ -94,6 +90,31 @@
             <img class="gallery__photo" src="./assets/images/Photo-gallery-9.jpg"/>            
         </section>
     </section>
+
+
+    <section class="comments">
+        <h2 class = "comments__title">
+            Join the Conversation
+        </h2>
+        <div class="comments__form">
+            <form class="comments__input" id="comment" action="" method="get">
+                <div class="comments__avatar">
+                    <image class="comments__image" src="./assets/images/Mohan-muruge.jpg"></image>
+                </div>
+                <div class="comments__text">
+                    <label for ="name" class="comments__label">NAME</label>
+                    <input class="comments__name" type="text" id="name" name="name" placeholder="Enter your name"><br/>
+                    <label for ="comment" class="comments__label">COMMENT</label>
+                    <textarea class="comments__comment" type="text" id="comment" name="comment" placeholder="Add a new comment"></textarea><br/>
+                    <button class="comments__button" id="submitButton">COMMENT</button>
+                </div>
+            </form>
+
+        </div>
+
+    </section>
+
+
     <footer class="footer">
         <div class="footer__touch">
             <div class="footer__touch--left">

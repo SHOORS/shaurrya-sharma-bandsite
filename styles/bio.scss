@@ -220,6 +220,114 @@
     }
 }
 
+.comments {
+    padding: 1.5rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        margin: 0 2.25rem;
+        padding: 3rem 0 2.25rem;
+    }
+    @include desktop{
+        margin: 0 10%;           
+    }
+    &__title {
+        @include phone-section-heading;
+        padding-bottom: 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        @include desktop {
+            padding: 0 10rem;
+        }
+    }
+    
+    &__input {
+        width: auto;
+        display: flex;
+        border-bottom: solid 1px $secondary-color2;
+        padding-bottom: 1.25rem;
+        @include tablet {
+            margin: 0 5rem;
+            // padding-bottom: 2.25rem;
+            // width: 85%;            
+        } 
+        @include desktop {
+            margin: 0 5.5rem;
+        }           
+    }
+    &__avatar {
+
+    }    
+    &__image {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin-right: 1rem;
+        margin-top: 1.425rem;
+        @include tablet {
+            margin-top: 1.625rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__label {
+        @include phone-body-copy;
+        font-size: 0.75rem;
+        padding-bottom: 0.25rem;
+        color: $primary-color2;
+    }
+    &__name {
+        @include phone-body-copy;        
+        color: $primary-color1;
+        border-radius: 0.25rem;
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        border: solid 1px $secondary-color2;
+        background-color: $secondary-color3;
+        &::placeholder {
+            color: $secondary-color1; 
+            font-family: "Avenir";           
+        }
+    }
+    &__comment {
+        @include phone-body-copy;
+        border-radius: 0.25rem;
+        min-height: 5.75rem;
+        padding: 0.75rem;
+        border: solid 1px $secondary-color2;
+        background-color: $secondary-color3;
+        &::placeholder {
+            color: $secondary-color1;
+            font-family: "Avenir";               
+        }
+    }
+    &__button {
+        color: $primary-color3;
+        background-color: $primary-color1;
+        // padding: 0.75rem;
+        height: 2.5rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        &:hover {
+            background-color: $secondary-color1;
+        }
+        @include tablet {
+            width: 9.375rem;
+            padding: 0 2rem;
+            align-self: flex-end;
+        }
+    }
+}
+
 // .footer {
 //     background-color: $primary-color1;
 //     padding: 1.5rem 1rem 1rem;
