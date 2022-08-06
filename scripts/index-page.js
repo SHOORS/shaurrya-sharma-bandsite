@@ -17,51 +17,91 @@ const allComments = [
 ]
 
 function createComments(commentList) {
+    commentList.forEach(comment => displayComment(comment));
+}
+
+// goal: create comment element and add it to top of div#posted
+function displayComment(comment) {
     const postedCommentsContainer = document.querySelector("#posted");
-    commentList.forEach(comment => {
-        const oneComment = document.createElement("div");        
-        postedCommentsContainer.appendChild(oneComment);
-        oneComment.classList.add("comments__postedComment");
 
-        const commentLeft = document.createElement("div");
-        commentLeft.classList.add("comments__postedComment-left");
-        oneComment.appendChild(commentLeft);
+    const oneComment = document.createElement("div");  
+    postedCommentsContainer.appendChild(oneComment);
+    oneComment.classList.add("comments__postedComment");
 
+    const commentLeft = document.createElement("div");
+    commentLeft.classList.add("comments__postedComment-left");
+    oneComment.appendChild(commentLeft);
+
+    
+    if (comment.avatarSrc) {        
         const commentAvatar = document.createElement("img");
-        commentAvatar.classList.add("comments__postedComment-image");
+        commentAvatar.classList.add("comments__image-me");
         commentLeft.appendChild(commentAvatar);
+        commentAvatar.src=comment.avatarSrc;
+    } else { 
+        const commentGreyAvatar = document.createElement("div");
+        commentGreyAvatar.classList.add("comments__postedComment-image");
+        commentLeft.appendChild(commentGreyAvatar);
+    }
 
-        const commentRight = document.createElement("div");
-        commentRight.classList.add("comments__postedComment-right");
-        oneComment.appendChild(commentRight);
 
-        const commentTop = document.createElement("div");
-        commentTop.classList.add("comments__postedComment-top");
-        commentRight.appendChild(commentTop);
-               
-        const commentName = document.createElement("div");
-        commentName.classList.add("comments__postedComment-name");
-        commentTop.appendChild(commentName);
-        commentName.innerText = comment.name;
+    const commentRight = document.createElement("div");
+    commentRight.classList.add("comments__postedComment-right");
+    oneComment.appendChild(commentRight);
 
-        const commentDate = document.createElement("div");
-        commentDate.classList.add("comments__postedComment-date");
-        commentTop.appendChild(commentDate);
-        commentDate.innerText = comment.date;
+    const commentTop = document.createElement("div");
+    commentTop.classList.add("comments__postedComment-top");
+    commentRight.appendChild(commentTop);
+           
+    const commentName = document.createElement("div");
+    commentName.classList.add("comments__postedComment-name");
+    commentTop.appendChild(commentName);
+    commentName.innerText = comment.name;
 
-        const commentMain = document.createElement("div");
-        commentMain.classList.add("comments__postedComment-main");
-        commentRight.appendChild(commentMain);
-        commentMain.innerText = comment.wording;
+    const commentDate = document.createElement("div");
+    commentDate.classList.add("comments__postedComment-date");
+    commentTop.appendChild(commentDate);
+    commentDate.innerText = comment.date;
 
-        // TODO: add icon element
-
-        // TODO: add name date element
-
-        // TODO: add wording element
-        
-    });
+    const commentMain = document.createElement("div");
+    commentMain.classList.add("comments__postedComment-main");
+    commentRight.appendChild(commentMain);
+    commentMain.innerText = comment.wording;
 }
 
 createComments(allComments);
+
+
+function getNewCommentObject(event) {
+    const formElement = event.target;
+    const commentName = formElement.name.value;
+    const commentContent = formElement.commentContent.value;
+    const commentPictureSrc = event.target.commentPicture.src;
+    const today = new Date(Date.now());
+    const date = today.getDay() + '/' + today.getMonth() + '/'
+        + today.getFullYear();
+
+    return {
+        name: commentName,
+        date,
+        wording: commentContent,
+        avatarSrc: commentPictureSrc
+    };
+}
+
+const commentForm = document.querySelector("#comment");
+commentForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const newComment = getNewCommentObject(event);
+    allComments.unshift(newComment);
+
+    const postedCommentsContainer = document.querySelector("#posted");
+    postedCommentsContainer.innerHTML = null;
+    createComments(allComments);
+    commentForm.reset();
+})
+
+
+
+
 

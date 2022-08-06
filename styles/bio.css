@@ -622,6 +622,16 @@ a {
     margin-top: 1.625rem;
   }
 }
+.comments__image-me {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin-right: 1rem;
+}
 .comments__text {
   display: flex;
   flex-direction: column;

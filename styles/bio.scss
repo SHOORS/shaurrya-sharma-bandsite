@@ -276,6 +276,14 @@
             margin-top: 1.625rem;
         }
     }
+    &__image-me {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin-right: 1rem;
+    }
 
     &__text {
         display: flex;
