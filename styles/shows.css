@@ -426,6 +426,7 @@ a {
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .shows__date {

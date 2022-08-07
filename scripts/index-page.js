@@ -20,7 +20,6 @@ function createComments(commentList) {
     commentList.forEach(comment => displayComment(comment));
 }
 
-// goal: create comment element and add it to top of div#posted
 function displayComment(comment) {
     const postedCommentsContainer = document.querySelector("#posted");
 
@@ -43,7 +42,6 @@ function displayComment(comment) {
         commentGreyAvatar.classList.add("comments__postedComment-image");
         commentLeft.appendChild(commentGreyAvatar);
     }
-
 
     const commentRight = document.createElement("div");
     commentRight.classList.add("comments__postedComment-right");
@@ -71,7 +69,6 @@ function displayComment(comment) {
 
 createComments(allComments);
 
-
 function getNewCommentObject(event) {
     const formElement = event.target;
     const commentName = formElement.name.value;
@@ -80,7 +77,6 @@ function getNewCommentObject(event) {
     const today = new Date(Date.now());
     const date = today.getDay() + '/' + today.getMonth() + '/'
         + today.getFullYear();
-
     return {
         name: commentName,
         date,
