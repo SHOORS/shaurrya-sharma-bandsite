@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './fonts' as *;
 
 @mixin tablet {
     @media (min-width: $breakpoint-tablet) {
@@ -31,7 +32,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
-    font-family: "AvenirDemi";
+    font-family: "AvenirDemi", sans-serif;
     letter-spacing: 0.0625rem;
     @include tablet {
         font-size: 3.75rem;
@@ -42,7 +43,7 @@
 @mixin phone-section-heading {
     font-size: 1.5rem;
     line-height: 2rem;    
-    font-family: "AvenirDemi"; 
+    font-family: "AvenirDemi", sans-serif; 
     @include tablet {
         font-size: 2.25rem;
         line-height: 2.75rem;
@@ -100,9 +101,11 @@
 }
 
 body {
-    font-family: "Avenir";    
+    font-family: "Avenir", sans-serif;    
 }
 
 a {
-    color:inherit
+    color:inherit;
+    line-height: 0%;  
 }
+

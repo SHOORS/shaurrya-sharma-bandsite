@@ -10,6 +10,18 @@
   font-family: "AvenirBold";
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
 }
+@font-face {
+  font-family: "Avenir";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "AvenirDemi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+}
+@font-face {
+  font-family: "AvenirBold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +30,12 @@
 }
 
 body {
-  font-family: "Avenir";
+  font-family: "Avenir", sans-serif;
 }
 
 a {
   color: inherit;
+  line-height: 0%;
 }
 
 .header {
@@ -77,7 +90,7 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0.5rem 0 1rem;
+  padding: 0.5rem 0 1.25rem;
 }
 @media (min-width: 768px) {
   .header__listitem, .header__listitem--active {
@@ -88,6 +101,7 @@ a {
 .header__listitem--active {
   color: #FFFFFF;
   border-bottom: solid 0.25rem;
+  padding: 0.5rem 0 1.25rem;
 }
 .header__listitem:hover, .header__listitem--active:hover {
   color: #FFFFFF;
@@ -95,7 +109,7 @@ a {
 }
 @media (min-width: 768px) {
   .header__listitem, .header__listitem--active {
-    padding: 1.5rem 0;
+    padding: 2.25rem 0 2rem;
     margin: 0 1.5rem;
   }
 }
@@ -147,7 +161,7 @@ a {
 .footer__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirDemi";
+  font-family: "AvenirDemi", sans-serif;
   color: #FFFFFF;
 }
 @media (min-width: 768px) {
@@ -307,7 +321,7 @@ a {
 .shows__title {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirDemi";
+  font-family: "AvenirDemi", sans-serif;
   padding-left: 1rem;
 }
 @media (min-width: 768px) {
@@ -607,7 +621,7 @@ a {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  font-family: "AvenirDemi";
+  font-family: "AvenirDemi", sans-serif;
   letter-spacing: 0.0625rem;
   color: #FFFFFF;
   padding: 1rem;
