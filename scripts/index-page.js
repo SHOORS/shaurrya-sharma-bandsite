@@ -1,20 +1,4 @@
-const allComments = [
-    {
-    name:"Connor Walton",
-    date:"02/17/2021",
-    wording:"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    },
-    {
-    name:"Emilie Beach",
-    date:"01/09/2021",
-    wording:"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-    {
-    name:"Miles Acosta",
-    date:"12/20/2020",
-    wording:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-]
+let apiURL = "https://project-1-api.herokuapp.com/comments?api_key=eab666ab-99ed-4abb-b312-c18b41a823ba";
 
 function createComments(commentList) {
     commentList.forEach(comment => displayComment(comment));
@@ -31,7 +15,6 @@ function displayComment(comment) {
     commentLeft.classList.add("comments__postedComment-left");
     oneComment.appendChild(commentLeft);
 
-    
     if (comment.avatarSrc) {        
         const commentAvatar = document.createElement("img");
         commentAvatar.classList.add("comments__image-me");
@@ -56,46 +39,58 @@ function displayComment(comment) {
     commentTop.appendChild(commentName);
     commentName.innerText = comment.name;
 
+    let useDate = new Date(comment.timestamp);
+    let useDate2 = useDate.toLocaleDateString("en-US", {year: "numeric", month: "2-digit", day: "2-digit"});
+      
     const commentDate = document.createElement("div");
     commentDate.classList.add("comments__postedComment-date");
     commentTop.appendChild(commentDate);
-    commentDate.innerText = comment.date;
-
+    commentDate.innerText = useDate2;
+    
     const commentMain = document.createElement("div");
     commentMain.classList.add("comments__postedComment-main");
     commentRight.appendChild(commentMain);
-    commentMain.innerText = comment.wording;
+    commentMain.innerText = comment.comment;
 }
-
-createComments(allComments);
 
 function getNewCommentObject(event) {
     const formElement = event.target;
     const commentName = formElement.name.value;
-    const commentContent = formElement.commentContent.value;
-    const commentPictureSrc = event.target.commentPicture.src;
-    const today = new Date(Date.now());
-    const date = today.getDay() + '/' + today.getMonth() + '/'
-        + today.getFullYear();
+    const commentContent = formElement.commentContent.value;    
     return {
-        name: commentName,
-        date,
-        wording: commentContent,
-        avatarSrc: commentPictureSrc
+        name: commentName,        
+        comment: commentContent,        
     };
 }
+
+function getCommentsToDisplay() {
+    axios.get(apiURL)
+    .then(response => {
+        let allComments = response.data;
+        allComments.sort(function(a, b) { 
+            return b.timestamp - a.timestamp;
+        }); 
+        console.log(allComments);
+        createComments(allComments);
+    })
+    .catch((error) => console.log("ERROR RETRIEVING DATA"));
+}
+
+getCommentsToDisplay();
 
 const commentForm = document.querySelector("#comment");
 commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const newComment = getNewCommentObject(event);
-    allComments.unshift(newComment);
-
-    const postedCommentsContainer = document.querySelector("#posted");
-    postedCommentsContainer.innerHTML = null;
-    createComments(allComments);
-    commentForm.reset();
-})
+    const newComment = getNewCommentObject(event);    
+    axios
+        .post(apiURL, newComment)
+        .then(()=> {            
+            const postedCommentsContainer = document.querySelector("#posted");
+            postedCommentsContainer.innerHTML = null;
+            getCommentsToDisplay();
+            commentForm.reset();
+        })   
+});
 
 
 
