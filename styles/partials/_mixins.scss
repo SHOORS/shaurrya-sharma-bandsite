@@ -16,8 +16,8 @@
 @mixin phone-page-heading {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;
-    font-family: "AvenirDemi", sans-serif;
+    font-weight: 600;
+    font-family: "Avenir", sans-serif;
     letter-spacing: 0.0625rem;
     @include tablet {
         font-size: 3.75rem;
@@ -27,8 +27,9 @@
 
 @mixin phone-section-heading {
     font-size: 1.5rem;
-    line-height: 2rem;    
-    font-family: "AvenirDemi", sans-serif; 
+    line-height: 2rem;
+    font-weight: 600;    
+    font-family: "Avenir", sans-serif; 
     @include tablet {
         font-size: 2.25rem;
         line-height: 2.75rem;

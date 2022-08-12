@@ -75,7 +75,8 @@
     &__quote {
         margin: 1rem 0;
         @include phone-sub-heading;
-        font-family: "AvenirDemi";
+        font-family: "Avenir";
+        font-weight: 600;
         @include tablet {
             margin: 2.25rem 0 1rem;
         }
@@ -85,7 +86,8 @@
     }
     &__quoter {
         @include phone-sub-heading;
-        font-family: "AvenirDemi";
+        font-family: "Avenir";
+        font-weight: 600;
         @include tablet {
             font-size: 1rem;
         }
@@ -96,7 +98,8 @@
         color: $secondary-color1;
         @include tablet{
             margin: 3rem 0 1rem;
-            font-family: "AvenirDemi";
+            font-family: "Avenir";
+            font-weight: 600;
         }
     }
     &__paragraphs {
@@ -318,7 +321,8 @@
     }
     &__postedComment-name {
         @include phone-body-copy;
-        font-family: "AvenirDemi";
+        font-family: "Avenir";
+        font-weight: 600
     }
     &__postedComment-date {
         @include phone-body-copy;
