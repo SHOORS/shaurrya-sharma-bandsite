@@ -1,37 +1,35 @@
-const shows = [
-    { 
-    date: "Mon Sept 06 2021", 
-    venue: "Ronald Lane",
-    location: "San Francisco, CA"
-    },
-    {
-    date:"Tue Sept 21 2021", 
-    venue:"Pier 3 East", 
-    location:"San Francisco, CA"
-    },
-    {
-    date: "Fri Oct 15 2021", 
-    venue: "View Lounge", 
-    location: "San Francisco, CA" 
-    },
-    {
-    date: "Sat Nov 06 2021", 
-    venue: "Hyatt Agency", 
-    location: "San Francisco, CA"
-    },
-    {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center", 
-    location: "San Francisco, CA" 
-    },
-    {
-    date: "Wed Dec 15 2021", 
-    venue: "Press Club", 
-    location: "San Francisco, CA"
-    }
-] 
-
-
+// const shows = [
+//     { 
+//     date: "Mon Sept 06 2021", 
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA"
+//     },
+//     {
+//     date:"Tue Sept 21 2021", 
+//     venue:"Pier 3 East", 
+//     location:"San Francisco, CA"
+//     },
+//     {
+//     date: "Fri Oct 15 2021", 
+//     venue: "View Lounge", 
+//     location: "San Francisco, CA" 
+//     },
+//     {
+//     date: "Sat Nov 06 2021", 
+//     venue: "Hyatt Agency", 
+//     location: "San Francisco, CA"
+//     },
+//     {
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center", 
+//     location: "San Francisco, CA" 
+//     },
+//     {
+//     date: "Wed Dec 15 2021", 
+//     venue: "Press Club", 
+//     location: "San Francisco, CA"
+//     }
+// ] 
 
 const showsList = document.getElementById("shows");
 showsList.classList.add("shows__showsList");
@@ -74,6 +72,9 @@ tabletopempty.innerText = ""
 tabletop.appendChild(tabletopempty);
 
 
+
+function createEachShow(shows) {
+
 for (let i = 0; i < shows.length; i++) {
 
     const oneShow = document.createElement("div");
@@ -82,12 +83,15 @@ for (let i = 0; i < shows.length; i++) {
 
     const showDate = document.createElement("div");
     showDate.classList.add("shows__date");
-    showDate.innerText = shows[i].date;
+
+    let formattedDate = (shows[i].date);
+    const formattedDate2 = new Date(formattedDate).toDateString();
+    showDate.innerText = formattedDate2;    
     oneShow.appendChild(showDate);
 
     const showVenue = document.createElement("div");
     showVenue.classList.add("shows__venue");
-    showVenue.innerText = shows[i].venue;
+    showVenue.innerText = shows[i].place;
     oneShow.appendChild(showVenue);
 
     const showLocation = document.createElement("div");
@@ -101,7 +105,20 @@ for (let i = 0; i < shows.length; i++) {
     oneShow.appendChild(showButton);
 
     oneShow.addEventListener("click", onClick);
+}};
+
+function getShowsToDisplay() {
+    const showsURL = "https://project-1-api.herokuapp.com/showdates?api_key=eab666ab-99ed-4abb-b312-c18b41a823ba";
+    axios.get(showsURL)    
+    .then(response => {
+        console.log(response);
+        let allShows = response.data; 
+        createEachShow(allShows);
+    })
+    .catch((error) => console.log("ERROR RETRIEVING DATA"));
 }
+
+getShowsToDisplay();
 
 function onClick(event) {
     const currentSelected = document.querySelector(".shows__oneShow--selected");

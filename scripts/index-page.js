@@ -69,8 +69,7 @@ function getCommentsToDisplay() {
         let allComments = response.data;
         allComments.sort(function(a, b) { 
             return b.timestamp - a.timestamp;
-        }); 
-        console.log(allComments);
+        });         
         createComments(allComments);
     })
     .catch((error) => console.log("ERROR RETRIEVING DATA"));
