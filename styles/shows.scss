@@ -53,6 +53,7 @@
         @include phone-body-copy;
         display: none;
         color:$primary-color2;
+        font-weight: 600;
         @include tablet {
             font-size: 0.75rem;
             display: inline;
@@ -126,6 +127,7 @@
         }
         &::before {
             content: "VENUE";
+            font-weight: 600;
             color:$primary-color2;
             font-size: 0.75rem;
             padding-bottom: 0.5rem;
@@ -144,6 +146,7 @@
             padding: 0;
         }
         &::before {
+            font-weight: 600;
             content: "LOCATION";
             color:$primary-color2;
             font-size: 0.75rem;

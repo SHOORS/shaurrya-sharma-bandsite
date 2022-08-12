@@ -359,6 +359,7 @@ a {
   letter-spacing: 0.015625rem;
   display: none;
   color: #AFAFAF;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .shows__tabletop-item {
@@ -472,6 +473,7 @@ a {
 }
 .shows__venue::before {
   content: "VENUE";
+  font-weight: 600;
   color: #AFAFAF;
   font-size: 0.75rem;
   padding-bottom: 0.5rem;
@@ -503,6 +505,7 @@ a {
   }
 }
 .shows__location::before {
+  font-weight: 600;
   content: "LOCATION";
   color: #AFAFAF;
   font-size: 0.75rem;
