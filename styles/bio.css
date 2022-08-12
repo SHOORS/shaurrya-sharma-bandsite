@@ -10,18 +10,6 @@
   font-family: "AvenirBold";
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
 }
-@font-face {
-  font-family: "Avenir";
-  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
-}
-@font-face {
-  font-family: "AvenirDemi";
-  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
-}
-@font-face {
-  font-family: "AvenirBold";
-  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
-}
 * {
   margin: 0;
   padding: 0;
